@@ -1,1 +1,17 @@
-# empty dummy file
+version: 1
+default_environment: codespace
+project_id: f52efe3f-a603-4231-996b-60ef669d080a
+environments:
+- name: dev
+- name: staging
+- name: prod
+- name: codespace
+plugins:
+  extractors:
+  - name: tap-csv
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/tap-csv.git
+  mappers:
+  - name: transform-field
+    variant: transferwise
+    pip_url: pipelinewise-transform-field
