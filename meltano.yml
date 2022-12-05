@@ -11,7 +11,14 @@ plugins:
   - name: tap-csv
     variant: meltanolabs
     pip_url: git+https://github.com/MeltanoLabs/tap-csv.git
+    config:
+      files:
+      - entity: raw_customers
+        path: data/customers.csv
+        keys: [id]
+        
   mappers:
-  - name: transform-field
-    variant: transferwise
-    pip_url: pipelinewise-transform-field
+    - name: transform-field
+      variant: transferwise
+      pip_url: pipelinewise-transform-field
+      executable: transform-field      
